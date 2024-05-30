@@ -1,0 +1,29 @@
+# Task 01
+
+syndicate generate project --name BbAwsServerlessTask01
+
+    syndicate generate config --name "dev" \
+    --region "eu-central-1" \
+    --bundle_bucket_name "syndicate-education-platform-custom-sandbox-artifacts-sbox01/5203d48b/task01" \
+    --prefix "cmtr-5203d48b-" \
+    --extended_prefix True \
+    --iam_permissions_boundary "arn:aws:iam::196241772369:policy/eo_role_boundary" \
+    --access_key "ASIAS3MHLZ5ISDPNVLPH" \
+    --secret_key "qLc+BpBoImTIXGaJEMpYezwR3D0EjKHLwd7x+eAI" \
+    --session_token "IQoJb3JpZ2luX2VjEIr//////////wEaCXVzLWVhc3QtMSJIMEYCIQC6+oMHqhR5QuqevsLBlpvId/mXU05YfedzZnMhIw5NJAIhAJOEsh7A7nDCadaNzSzccnYgQLdxuWtWCw6HJszttcG1Kt0CCBIQARoMMTk2MjQxNzcyMzY5Igxbnj9nIUDLxbe4OZkqugKQGdVsEwtd6MFeZL+s4nsKrp/YP/HVIeHmy0rwPQXC36eHQ0eNTwUdUtp8fVcOc1sZQsM0h+B5Ssb6RZJ1i83/U3QuqtIHUE+zyXSiglyi2+HI3ztU4JDb4vFvaLur23Q8YJdP8tr8Qscm6kzROay6iP6zMSpvDVHSW1Fk8feNSVwexgx3EO7VnJ+FMlXIUeM+27XgzEK7S/6Ic91TMiOJWfIOfRGtL2WWQBbCiE08MCro3OJ1C4AGfEknmwmBJyCAtPrc95n6QGlD3iNLedhNvn3wAYjyCh9YQfLAAVWVrlbDf8LlvUbXKpS87xYe144NzA49fvmNn/gccL0ufzDzcw+Ps+TQX9nDR5b3Hp8XL4TBtMncpDvgX8HsnQIfb95xKGmUVqKhirFeLlOzICFvTJ8pIv/IvTGF+TCf49uyBjqcAQDLPWxd9kM3XptWH/EOWNIIeoN4xXFkOlUtPfguXbSAvwFwZcs2SFTgvi2rPA70kgBzaB7ZB0Ym2IUU7hF7dQH47qX9wVXuffJYxEyBm7d5xY6FYdMxM88hgfSqyAt0pq5vMW5XK3bh9O39ObDGn9Tv68t4RhndnJu5vQVhHVPjdq8gE5s1k14Phy+y1aBWLYRRvNDHAir1p5bJyg=="
+
+syndicate create_deploy_target_bucket
+syndicate generate lambda --name task01 --runtime java --project_path $(pwd)
+syndicate build
+syndicate deploy
+
+    
+
+
+
+# Python Fix
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+pyenv global 3.10.4
+python --version
