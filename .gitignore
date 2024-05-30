@@ -1,0 +1,11 @@
+.syndicate
+logs/
+.syndicate-config-*/
+target/
+
+.DS_Store
+.syndicate
+.syndicate-config-dev/
+task01/.DS_Store
+task01/BbAwsServerlessTask01/.DS_Store
+task01/target
